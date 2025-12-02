@@ -1,0 +1,34 @@
+{
+  "extends": [
+    "config:recommended",
+    //"config:semverAllMonthly",
+    // Workaround for https://github.com/renovatebot/renovate/discussions/37753
+    // and https://github.com/renovatebot/renovate/discussions/37720
+    "github>Parnassius/renovate-config:semverAllMonthly",
+    ":configMigration",
+    ":disableRateLimiting"
+  ],
+  "additionalBranchPrefix": "{{manager}}-",
+  "commitMessagePrefix": "[{{manager}}]",
+  "packageRules": [
+    {
+      "matchDatasources": "github-releases",
+      "matchDepTypes": "uses-with",
+      "enabled": false
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "github-runners",
+      "depTypeTemplate": "github-runner",
+      "versioningTemplate": "docker",
+      "managerFilePatterns": [
+        "/^\\.github/workflows/.+\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "[\"']?(?<depName>[^\\s]+?)-(?<currentValue>[^\\s]+?)[\"']?\\s+# renovate: github-runner"
+      ]
+    }
+  ]
+}

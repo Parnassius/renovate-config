@@ -1,0 +1,20 @@
+{
+  "extends": [
+    ":preserveSemverRanges",
+    "group:all"
+    //"schedule:monthly",
+    //":maintainLockFilesMonthly"
+  ],
+  "schedule": [
+    "* 0-12 1 * *"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "branchTopic": "all",
+    "commitMessageAction": "Update all dependencies",
+    "schedule": [
+      "* 0-12 1 * *"
+    ]
+  },
+  "separateMajorMinor": false
+}
