@@ -5,6 +5,7 @@
     // Workaround for https://github.com/renovatebot/renovate/discussions/37753
     // and https://github.com/renovatebot/renovate/discussions/37720
     "github>Parnassius/renovate-config:semverAllMonthly",
+    "helpers:pinGitHubActionDigests",
     ":configMigration",
     ":disableRateLimiting"
   ],
