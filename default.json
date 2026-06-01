@@ -9,8 +9,8 @@
     ":configMigration",
     ":disableRateLimiting"
   ],
-  "additionalBranchPrefix": "{{manager}}-",
-  "commitMessagePrefix": "[{{manager}}]",
+  "additionalBranchPrefix": "{{#if (and (equals manager 'regex') (equals datasource 'github-runners'))}}github-actions{{else}}{{manager}}{{/if}}-",
+  "commitMessagePrefix": "[{{#if (and (equals manager 'regex') (equals datasource 'github-runners'))}}github-actions{{else}}{{manager}}{{/if}}]",
   "packageRules": [
     {
       "matchDatasources": "github-releases",
