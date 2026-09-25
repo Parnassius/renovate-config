@@ -16,6 +16,10 @@
       "matchDatasources": "github-releases",
       "matchDepTypes": "uses-with",
       "enabled": false
+    },
+    {
+      "matchManagers": "pyenv",
+      "enabled": false
     }
   ],
   "customManagers": [
