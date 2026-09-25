@@ -31,5 +31,13 @@
         "[\"']?(?<depName>[^\\s]+?)-(?<currentValue>[^\\s]+?)[\"']?\\s+# renovate: github-runner"
       ]
     }
+  ],
+  "minimumReleaseAge": "15 days",
+  "minimumReleaseAgeBehaviour": "timestamp-optional",
+  "logLevelRemap": [
+    {
+      "matchMessage": "/^Some (?:release|upgrade)\\(s\\) did not have a releaseTimestamp, but as we're running with minimumReleaseAgeBehaviour=timestamp-optional, proceeding. See debug logs for more information$/",
+      "newLogLevel": "info"
+    }
   ]
 }
