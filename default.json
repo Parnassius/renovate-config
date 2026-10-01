@@ -7,7 +7,9 @@
     "github>Parnassius/renovate-config:semverAllMonthly",
     "helpers:pinGitHubActionDigestsToSemver",
     ":configMigration",
-    ":disableRateLimiting"
+    ":disableRateLimiting",
+    ":noUnscheduledUpdates",
+    ":timezone(Europe/Rome)"
   ],
   "additionalBranchPrefix": "{{#if (and (equals manager 'regex') (equals datasource 'github-runners'))}}github-actions{{else}}{{manager}}{{/if}}-",
   "commitMessagePrefix": "[{{#if (and (equals manager 'regex') (equals datasource 'github-runners'))}}github-actions{{else}}{{manager}}{{/if}}]",
